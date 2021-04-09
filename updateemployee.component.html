@@ -1,0 +1,40 @@
+<h1>Update Employee</h1>
+<form action="" #updateemployee="ngForm" (ngSubmit)="Update(updateemployee)">
+    <div>
+        <label for="eid">Employee ID</label>
+        <input type="text" name="eid" id="eid" [(ngModel)]="model.eid" #eid="ngModel" readonly>
+    </div>
+    <div>
+        <label for="ename">Employee Name</label>
+        <input type="text" name="ename" id="ename" [(ngModel)]="model.ename" #ename = "ngModel" required>
+        <span *ngIf="ename.errors?.required">Field cannot be blank</span>
+    </div>
+    <div>
+        <label for="dept">Department</label>
+        <input type="text" name="dept" id="dept" [(ngModel)]="model.dept" #dept="ngModel" required>
+        <span *ngIf="dept.errors?.required">Field cannot be blank</span>
+    </div>
+    <div>
+        <label for="desg">Designation</label>
+        <input type="text" name="desg" id="desg" [(ngModel)]="model.desg" #desg = "ngModel" required>
+        <span *ngIf="desg.errors?.required">Field cannot be empty</span>
+    </div>
+    <div>
+        <label for="salary">Salary</label>
+        <input type="text" name="salary" id="salary" [(ngModel)]="model.salary" #salary="ngModel" required>
+        <span *ngIf="salary.errors?.required">Field cannot be blank</span>
+    </div>
+    <div>
+        <label for="projid">Project ID</label>
+        <input type="text" name="projid" id="projid" [(ngModel)]="model.projid" #projid="ngModel" required>
+        <span *ngIf="projid.errors?.required">Field cannot be blank</span>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" [(ngModel)]="model.password" #password="ngModel" required>
+        <span *ngIf="password.errors?.required">Field cannot be blank</span>
+    </div>
+    <div>
+        <button type="submit" [disabled]="updateemployee.invalid">Update Details</button>
+    </div>
+</form>

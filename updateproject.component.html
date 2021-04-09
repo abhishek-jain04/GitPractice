@@ -1,0 +1,18 @@
+<h1>Update Project</h1>
+<form action="" #updateproject="ngForm" (ngSubmit)="Update(updateproject)">
+    <div>
+        <label for="projid">Project ID</label>
+        <input type="text" name="projid" id="projid" [(ngModel)]="model.projid" #projid="ngModel" value="{{pid}}" readonly>
+    </div>
+    <div>
+        <label for="projname">Project Name</label>
+        <input type="text" name="projname" id="projname" [(ngModel)]="model.projname" #projname="ngModel" value="{{pname}}" required>
+    </div>
+    <div>
+        <label for="domain">Domain</label>
+        <input type="text" name="domain" id="domain" [(ngModel)]="model.domain" #domain="ngModel" value="{{domain}}" required>
+    </div>
+    <div>
+        <button type="submit" [diabled]="updateproject.invalid">Update</button>
+    </div>
+</form>

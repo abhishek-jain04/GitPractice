@@ -1,0 +1,11 @@
+<h1>Delete Employee</h1>
+<form action="" #DeleteForm = "ngForm" (bgSubmit) = "EmpData(DeleteForm)">
+    <div>
+        <label for="eid">Employee ID</label>
+        <input type="text" name="eid" [(ngModel)]="model.eid" #eid = "ngModel" id="eid" required>
+        <span *ngIf="eid.errors?.required">Employee ID cannot be blank</span>
+    </div>
+    <div>
+        <button type="submit" [disabled] = "DeleteForm.invalid">Delete</button>
+    </div>
+</form>

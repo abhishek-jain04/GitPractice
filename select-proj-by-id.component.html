@@ -1,0 +1,23 @@
+<h1>Select Project By ID</h1>
+<form action="" #getproject="ngForm" (ngSubmit)="SelectProject(getproject)">
+    <div>
+        <label for="pid">Project ID</label>
+        <input type="text" name="pid" id="pid" [(ngModel)]="model.pid" #pid = "ngModel" required>
+        <span *ngIf="pid.errors?.required">Field cannot be blank</span>
+    </div>
+    <div>
+        <button type="submit" [disabled] = "getproject.invalid">Find</button>
+    </div>
+</form>
+<table>
+    <tr>
+        <th>Project ID</th>
+        <th>Project Name</th>
+        <th>Domain</th>
+    </tr>
+    <tr>
+        <td>{{proj.ProjID}}</td>
+        <td>{{proj.ProjName}}</td>
+        <td>{{proj.domain}}</td>
+    </tr>
+</table>

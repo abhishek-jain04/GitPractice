@@ -1,0 +1,30 @@
+<h1>Show Employee By ID</h1>
+<form action="" #getemployee = "ngForm" (ngSubmit) = "FindEmployee(getemployee)">
+    <div>
+        <label for="empid">Employee ID</label>
+        <input type="text" name="empid" [(ngModel)]="emp.empid" #empid = "ngModel" id="empid" placeholder="Enter Employee ID" required>
+        <span *ngIf="empid.errors?.required">Employee ID cannot be blank</span>
+    </div>
+    <div>
+        <button type="submit" [disabled] = getemployee.invalid>Find</button>
+    </div>
+</form>
+<hr>
+<table>
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Salary</th>
+        <th>Project ID</th>
+    </tr>
+    <tr>
+        <td>{{employeeid}}</td>
+        <td>{{employeename}}</td>
+        <td>{{department}}</td>
+        <td>{{designation}}</td>
+        <td>{{salary}}</td>
+        <td>{{projectid}}</td>
+    </tr>
+</table>

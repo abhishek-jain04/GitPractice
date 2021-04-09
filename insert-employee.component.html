@@ -1,0 +1,42 @@
+<h1>Insert Employee</h1>
+<form action="" #NewEmployee = "ngForm" (ngSubmit) = "RegisterData(NewEmployee)">
+    <div>
+        <label for="eid">Employee ID</label>
+        <input type="text" name="eid" [(ngModel)]="model.eid" #eid = "ngModel" id="eid" placeholder="Enter Employee ID" required>
+        <span *ngIf="eid.errors?.required">Employee ID cannot be blank</span>
+    </div>
+    <div>
+        <label for="ename">Employee Name</label>
+        <input type="text" name="ename" [(ngModel)]="model.ename" #ename = "ngModel" id="ename" placeholder="Enter Employee Name" required>
+        <span *ngIf="ename.errors?.required">Employee name cannot be blank</span>
+    </div>
+    <div>
+        <label for="dept">Department</label>
+        <input type="text" name="dept" [(ngModel)]="model.dept" #dept = "ngModel" id="dept" placeholder="Enter Department Name" required>
+        <span *ngIf="dept.errors?.required">Department name cannot be blank</span>
+    </div>
+    <div>
+        <label for="desg">Designation</label>
+        <input type="text" name="desg" [(ngModel)]="model.desg" #desg = "ngModel" id="desg" placeholder="Enter Designation" required>
+        <span *ngIf="desg.errors?.required">Designation cannot be blank</span>
+    </div>
+    <div>
+        <label for="salary">Enter Salary</label>
+        <input type="text" name="salary" [(ngModel)]="model.salary" #salary = "ngModel" id="salary" placeholder="Enter Salary" required>
+        <span *ngIf="salary.errors?.required">Salary cannot be blank</span>
+    </div>
+    <div>
+        <label for="projid">Enter Project Name</label>
+        <select name="projid" [(ngModel)]="model.projid" #projid = "ngModel" id="projid" required>
+            <option *ngFor="let item of plist" value="item.ProjID">{{item.ProjName}}</option>
+        </select>
+    </div>
+    <div>
+        <label for="password">Enter Password</label>
+        <input type="password" name="password" [(ngModel)]="model.password" #password = "ngModel" id="password" placeholder="Enter Password" required>
+        <span *ngIf="password.errors?.required">Password cannot be blank</span>
+    </div>
+    <div>
+        <button type="submit" [disabled] = "NewEmployee.invalid">Submit</button>
+    </div>
+</form>

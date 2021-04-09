@@ -1,0 +1,16 @@
+<h1>Login</h1>
+<form action="" #LoginForm = "ngForm" (ngSubmit) = "Login(LoginForm)">
+    <div>
+        <label for="name">Enter Employee Name</label>
+        <input type="text" name="name" id="name" [(ngModel)]="model.name" #name = "ngModel" required>
+        <span *ngIf="name.errors?.required">Employee Name cannot be blank</span>
+    </div>
+    <div>
+        <label for="pwd">Enter Password</label>
+        <input type="password" name="pwd" id="pwd" [(ngModel)]="model.pwd" #pwd = "ngModel" required>
+        <span *ngIf="pwd.errors?.required">Password cannot be blank</span>
+    </div>
+    <div>
+        <button type="submit" [disabled] = "LoginForm.invalid">Login</button>
+    </div>
+</form>

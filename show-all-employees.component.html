@@ -1,0 +1,19 @@
+<h1>Employee Data</h1>
+<table border="1">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Salary</th>
+        <th>Project ID</th>
+    </tr>
+    <tr *ngFor="let item of emplist">
+        <td>{{item.EmpID}}</td>
+        <td>{{item.EmpName}}</td>
+        <td>{{item.Dept}}</td>
+        <td>{{item.Desg}}</td>
+        <td>{{item.Salary}}</td>
+        <td>{{item.ProjID}}</td>
+    </tr>
+</table>
